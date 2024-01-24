@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "285361106660",
+    "project_id": "elive-9b69c",
+    "storage_bucket": "elive-9b69c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:285361106660:android:b5348a8bb8fdc8d2cb46f1",
+        "android_client_info": {
+          "package_name": "com.tropat.elive"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAuF-OUF3Qfjw6sFr4bg-iieG5BD_kKWKY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
