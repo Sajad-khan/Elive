@@ -106,6 +106,12 @@ fun MainContent(paddingValues: PaddingValues, navController: NavController){
                 placeholder = { Text(text = "First Name") },
                 label = { Text(text = "First Name") },
                 colors = myTextFieldColors(),
+                keyboardOptions = KeyboardOptions.Default.copy(
+                    imeAction = ImeAction.Done
+                ),
+                keyboardActions = KeyboardActions(
+                    onDone = {keyboardController?.hide()}
+                ),
                 maxLines = 1
             )
             Spacer(modifier = Modifier.height(5.dp))
@@ -116,9 +122,18 @@ fun MainContent(paddingValues: PaddingValues, navController: NavController){
                 placeholder = { Text(text = "Last Name") },
                 label = { Text(text = "Last Name") },
                 colors = myTextFieldColors(),
+                keyboardOptions = KeyboardOptions.Default.copy(
+                    imeAction = ImeAction.Done
+                ),
+                keyboardActions = KeyboardActions(
+                    onDone = {
+                        keyboardController?.hide()
+                    }
+                ),
                 maxLines = 1
             )
             Spacer(modifier = Modifier.height(5.dp))
+
             OutlinedTextField(modifier = Modifier.fillMaxWidth(),
                 value = email,
                 onValueChange = {email = it
@@ -131,7 +146,6 @@ fun MainContent(paddingValues: PaddingValues, navController: NavController){
                 ),
                 keyboardActions = KeyboardActions(
                     onDone = {
-                        // Handle the Done action, if needed
                         keyboardController?.hide()
                     }
                 ),
@@ -152,6 +166,14 @@ fun MainContent(paddingValues: PaddingValues, navController: NavController){
                 placeholder = { Text(text = "Password") },
                 label = { Text(text = "Password") },
                 colors = myTextFieldColors(),
+                keyboardOptions = KeyboardOptions.Default.copy(
+                    imeAction = ImeAction.Done
+                ),
+                keyboardActions = KeyboardActions(
+                    onDone = {
+                        keyboardController?.hide()
+                    }
+                ),
                 maxLines = 1
             )
             if(!isPasswordValid){

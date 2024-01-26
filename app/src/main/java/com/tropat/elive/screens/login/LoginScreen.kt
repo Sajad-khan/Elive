@@ -110,7 +110,6 @@ fun MainContent(
                 ),
                 keyboardActions = KeyboardActions(
                     onDone = {
-                        // Handle the Done action, if needed
                         keyboardController?.hide()
                     }
                 ),
@@ -128,6 +127,14 @@ fun MainContent(
                 label = { Text(text = "Password")},
                 colors = myTextFieldColors(),
                 maxLines = 1,
+                keyboardOptions = KeyboardOptions.Default.copy(
+                    imeAction = ImeAction.Done
+                ),
+                keyboardActions = KeyboardActions(
+                    onDone = {
+                        keyboardController?.hide()
+                    }
+                ),
                 visualTransformation = if (passwordVisible) VisualTransformation.None else PasswordVisualTransformation(),
                 trailingIcon = {
                     IconButton(onClick = {passwordVisible = !passwordVisible}){

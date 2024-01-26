@@ -1,6 +1,7 @@
 package com.tropat.elive.navigation
 
 import androidx.compose.runtime.Composable
+import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
@@ -8,6 +9,7 @@ import com.tropat.elive.screens.SplashScreenContent
 import com.tropat.elive.screens.details.DetailScreenContent
 import com.tropat.elive.screens.home.HomeScreenContent
 import com.tropat.elive.screens.login.LoginScreenContent
+import com.tropat.elive.screens.search.BookSearchViewModel
 import com.tropat.elive.screens.search.SearchScreenContent
 import com.tropat.elive.screens.signup.SignUpScreenContent
 import com.tropat.elive.screens.stats.StatsScreenContent
@@ -32,7 +34,8 @@ fun EliveNavigation(){
                 LoginScreenContent(navController = navController)
             }
             composable(EliveScreens.SearchScreen.name){
-                SearchScreenContent(navController = navController)
+                val searchViewModel = hiltViewModel<BookSearchViewModel>()
+                SearchScreenContent(navController = navController, searchViewModel)
             }
             composable(EliveScreens.UpdateScreen.name){
                 UpdateScreenContent(navController = navController)

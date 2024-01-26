@@ -1,7 +1,6 @@
 package com.tropat.elive.screens.home
 
 import android.util.Log
-import androidx.compose.runtime.mutableStateOf
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.google.firebase.Firebase
@@ -14,7 +13,6 @@ import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.launch
 
 class HomeScreenViewModel: ViewModel() {
-    val mUser = mutableStateOf(EliveUser())
     private val id = FirebaseAuth.getInstance().currentUser?.uid
     private val db = Firebase.firestore
     private val docRef = db.collection("users").document(id!!)

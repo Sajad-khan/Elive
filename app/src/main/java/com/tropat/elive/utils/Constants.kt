@@ -18,21 +18,28 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
 import com.tropat.elive.R
 
+//https://www.googleapis.com/books/v1/volumes?q=android
+const val BASE_URL = "https://www.googleapis.com/books/v1/"
 val brush = Brush.verticalGradient(listOf(Color(0xFF397796), Color(0xFF9A4B4B)))
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun myTextFieldColors() = TextFieldDefaults.textFieldColors(
+fun myTextFieldColors() = TextFieldDefaults.colors(
     focusedTextColor = Color.White,
     unfocusedTextColor = Color.White,
-    focusedLabelColor = Color.White,
-    unfocusedLabelColor = Color.White,
-    unfocusedPlaceholderColor = Color.White,
-    focusedPlaceholderColor = Color.White,
-    containerColor = Color.Transparent,
+    focusedContainerColor = Color.Transparent,
+    unfocusedContainerColor = Color.Transparent,
+    disabledContainerColor = Color.Transparent,
+    errorContainerColor = Color.Transparent,
+    cursorColor = Color.White,
     focusedIndicatorColor = Color.White,
     unfocusedIndicatorColor = Color.White,
-    cursorColor = Color.White,
-    errorContainerColor = Color.Transparent)
+    focusedLabelColor = Color.White,
+    unfocusedLabelColor = Color.White,
+    focusedPlaceholderColor = Color.White,
+    unfocusedPlaceholderColor = Color.White,
+    focusedLeadingIconColor = Color.White,
+    unfocusedLeadingIconColor = Color.White
+)
 @Composable
 fun AppIcon(){
     Column(modifier = Modifier.fillMaxWidth(),
